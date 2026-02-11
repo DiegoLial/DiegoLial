@@ -24,7 +24,7 @@ Sou um desenvolvedor apaixonado por tecnologia, com foco em **automação**, **a
 
 ## 🏆 Projeto em Destaque
 
-### 🤖 [Crypto Telegram BOT](https://github.com/DiegoLial/Crypto-Telegram-BOT) ⭐ 35 Stars
+### 🤖 [Crypto Telegram BOT](https://github.com/DiegoLial/Crypto-Telegram-BOT) ![GitHub Repo stars](https://img.shields.io/github/stars/DiegoLial/Crypto-Telegram-BOT?style=social)
 
 Um bot completo para análise técnica de criptomoedas no Telegram, oferecendo:
 
