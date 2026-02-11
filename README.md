@@ -67,7 +67,7 @@ Sou um desenvolvedor apaixonado por tecnologia, especializado em automação e a
 ### ⭐ [Crypto Telegram BOT](https://github.com/DiegoLial/Crypto-Telegram-BOT)
 **Bot de Análise Técnica de Criptomoedas para Telegram**
 
-🚀 **35 Stars | 14 Forks** - Projeto mais popular!
+🚀 **35+ Stars | 14+ Forks** - Projeto mais popular!
 
 Bot completo para análise técnica de criptomoedas com múltiplos indicadores:
 - 📊 **Indicadores Técnicos**: RSI, ROC, Volume, MFI, CCI, MACD, Stochastic, ADX
@@ -139,7 +139,7 @@ class DiegoLial:
     def __init__(self):
         self.username = "DiegoLial"
         self.role = "Full Stack Developer"
-        self.language_spoken = ["pt_BR", "en_US"]
+        self.languages_spoken = ["pt_BR", "en_US"]
         
     def get_skills(self):
         return {
@@ -203,9 +203,9 @@ print(diego.get_skills())
 
 ## 💼 Portfólio de Projetos
 
-| Projeto | Descrição | Tecnologias | Stars |
-|---------|-----------|-------------|-------|
-| [Crypto Telegram BOT](https://github.com/DiegoLial/Crypto-Telegram-BOT) | Bot de análise técnica completo para Telegram | Python, APIs | ⭐ 35 |
+| Projeto | Descrição | Tecnologias | Status |
+|---------|-----------|-------------|--------|
+| [Crypto Telegram BOT](https://github.com/DiegoLial/Crypto-Telegram-BOT) | Bot de análise técnica completo para Telegram | Python, APIs | ![Stars](https://img.shields.io/github/stars/DiegoLial/Crypto-Telegram-BOT?style=social) |
 | [Crypto Trading](https://github.com/DiegoLial/crypto) | Aplicação de trading de criptomoedas | TypeScript | 🔧 |
 | [NLW Project](https://github.com/DiegoLial/NLW) | Projeto Next Level Week | HTML/JS | 🌐 |
 
