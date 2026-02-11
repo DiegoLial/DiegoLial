@@ -4,6 +4,11 @@
 
 <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:00d9ff,100:0d1117&height=180&section=header&text=Diego%20Lial&fontSize=42&fontColor=ffffff&fontAlignY=35&desc=Full%20Stack%20Developer%20%E2%80%A2%20Automa%C3%A7%C3%A3o%20%E2%80%A2%20Seguran%C3%A7a%20P%C3%BAblica%20%E2%80%A2%20Cripto&descSize=16&descColor=00d9ff&descAlignY=55&animation=fadeIn" />
 
+<!-- ═══════════════ AI INTELLIGENCE ANALYST ═══════════════ -->
+<div align="center">
+  <img src="./assets/ai-analyst.svg" alt="AI Intelligence Analyst System" width="100%"/>
+</div>
+
 <div align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=22&duration=3000&pause=800&color=00D9FF&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=80&lines=%24+whoami;Diego+Lial+%E2%80%94+building+systems+that+matter+%F0%9F%9B%A1%EF%B8%8F" alt="Terminal Typing" />
 </div>
@@ -353,27 +358,10 @@ Análise de chat WhatsApp no browser
 
 ---
 
-## 🛡️ AI Intelligence Analyst
-
-<div align="center">
-  <img src="./assets/ai-analyst.svg" alt="AI Intelligence Analyst System" width="100%"/>
-</div>
-
----
-
-## 📈 Metrics Dashboard
-
-<!-- Gerado automaticamente pela GitHub Action: .github/workflows/metrics.yml -->
-<div align="center">
-  <img src="./github-metrics.svg" alt="GitHub Metrics" width="100%"/>
-</div>
-
----
-
 ## 🏆 Troféus
 
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=DiegoLial&theme=tokyonight&no-frame=true&no-bg=true&column=7&margin-w=10&margin-h=10" />
+  <img src="https://github-trophies.vercel.app/?username=DiegoLial&theme=algolia&no-frame=true&no-bg=true&column=4&margin-w=15&margin-h=15" />
 </div>
 
 ---
