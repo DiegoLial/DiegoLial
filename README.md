@@ -353,11 +353,10 @@ Análise de chat WhatsApp no browser
 
 ---
 
-## 🏙️ Contribuições 3D
+## 🛡️ AI Intelligence Analyst
 
-<!-- Gerado automaticamente pela GitHub Action: .github/workflows/3d-contrib.yml -->
 <div align="center">
-  <img src="./profile-3d-contrib/profile-night-green.svg" alt="3D Contribution Map" width="100%"/>
+  <img src="./assets/ai-analyst.svg" alt="AI Intelligence Analyst System" width="100%"/>
 </div>
 
 ---
