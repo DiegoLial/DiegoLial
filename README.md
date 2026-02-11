@@ -16,6 +16,7 @@
 Sou um desenvolvedor apaixonado por tecnologia, com foco em **automação**, **análise de dados** e **desenvolvimento de bots**. Tenho experiência em criar soluções inovadoras para o mercado de criptomoedas, utilizando análise técnica avançada e inteligência artificial.
 
 - 🔭 Atualmente trabalhando em projetos de **automação de trading** e **análise técnica de criptomoedas**
+- 🔒 Desenvolvendo soluções **privadas e corporativas** além dos projetos open source
 - 🌱 Sempre aprendendo sobre **Web3**, **IA** e **novas tecnologias**
 - 💡 Interessado em **análise de dados**, **bots do Telegram** e **integrações de APIs**
 - 🎯 Objetivo: Criar ferramentas que facilitam a vida dos traders e investidores
@@ -37,6 +38,19 @@ Um bot completo para análise técnica de criptomoedas no Telegram, oferecendo:
 - 💰 **Análise de Liquidações**: Monitoramento de liquidações no mercado
 
 **Tecnologias**: Python, Telegram API, TA-Lib, SQLite
+
+---
+
+## 🔒 Projetos Privados
+
+Além dos projetos open source, também trabalho em diversos **repositórios privados** incluindo:
+
+- 💼 **Soluções Corporativas**: Sistemas de automação e análise de dados personalizados
+- 🤖 **Bots Customizados**: Desenvolvimento de bots especializados para clientes
+- 📊 **Ferramentas de Trading**: Algoritmos proprietários e estratégias de trading
+- 🔐 **APIs Privadas**: Integrações e serviços backend confidenciais
+
+> 📈 *As estatísticas do GitHub neste perfil incluem contribuições de todos os meus repositórios, públicos e privados*
 
 ---
 
@@ -64,6 +78,8 @@ Um bot completo para análise técnica de criptomoedas no Telegram, oferecendo:
 ---
 
 ## 📊 Estatísticas do GitHub
+
+> 💡 **Nota**: As estatísticas abaixo incluem contribuições de repositórios públicos e privados
 
 <div align="center">
   
