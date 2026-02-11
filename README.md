@@ -196,7 +196,6 @@ print(diego.get_skills())
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/DiegoLial)
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/DiegoLial)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:diego@example.com)
 
 </div>
 
@@ -222,8 +221,8 @@ print(diego.get_skills())
 |-----------|-------------|
 | **Momentum** | RSI, ROC, Momentum, Stochastic |
 | **Tendência** | MACD, ADX, Parabolic SAR |
-| **Volume** | Volume Analysis, MFI |
-| **Volatilidade** | Bollinger Bands, ATR |
+| **Volume** | Volume Analysis, MFI, CCI |
+| **Volatilidade** | Bollinger Bands |
 | **Médias** | SMA10, SMA20, SMA50, SMA100 |
 
 </div>
