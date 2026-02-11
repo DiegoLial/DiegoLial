@@ -1,315 +1,230 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420">
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0e17"/>
-      <stop offset="50%" style="stop-color:#0d1117"/>
-      <stop offset="100%" style="stop-color:#080c14"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e17"/>
+      <stop offset="50%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#080c14"/>
     </linearGradient>
-    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:0"/>
-      <stop offset="50%" style="stop-color:#00d9ff;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:0"/>
+    <linearGradient id="cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d9ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#00d9ff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#00d9ff" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="scanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:0"/>
-      <stop offset="45%" style="stop-color:#00d9ff;stop-opacity:0.08"/>
-      <stop offset="50%" style="stop-color:#00d9ff;stop-opacity:0.25"/>
-      <stop offset="55%" style="stop-color:#00d9ff;stop-opacity:0.08"/>
-      <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:0"/>
+    <linearGradient id="scanG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00d9ff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#00d9ff" stop-opacity="0.06"/>
+      <stop offset="50%" stop-color="#00d9ff" stop-opacity="0.18"/>
+      <stop offset="55%" stop-color="#00d9ff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00d9ff" stop-opacity="0"/>
     </linearGradient>
-    <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:0.15"/>
-      <stop offset="100%" style="stop-color:#00d9ff;stop-opacity:0"/>
-    </radialGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glowStrong">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <clipPath id="mainClip">
-      <rect x="0" y="0" width="900" height="420" rx="12"/>
-    </clipPath>
   </defs>
 
-  <style>
-    @keyframes scanLine {
-      0% { transform: translateY(-50px); }
-      100% { transform: translateY(470px); }
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; r: 55; }
-      50% { opacity: 0.8; r: 62; }
-    }
-    @keyframes pulse2 {
-      0%, 100% { opacity: 0.15; r: 80; }
-      50% { opacity: 0.5; r: 88; }
-    }
-    @keyframes pulse3 {
-      0%, 100% { opacity: 0.08; r: 105; }
-      50% { opacity: 0.3; r: 112; }
-    }
-    @keyframes radarSweep {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(8px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideIn {
-      0% { opacity: 0; transform: translateX(-20px); }
-      100% { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes dataFlow {
-      0% { stroke-dashoffset: 100; }
-      100% { stroke-dashoffset: 0; }
-    }
-    @keyframes typing {
-      0% { width: 0; }
-      100% { width: 240px; }
-    }
-    @keyframes shieldPulse {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
-    }
-    @keyframes hexPulse {
-      0%, 100% { opacity: 0.03; }
-      50% { opacity: 0.08; }
-    }
-    @keyframes dotBlink {
-      0%, 20% { opacity: 0; }
-      25%, 45% { opacity: 1; }
-      50%, 70% { opacity: 0; }
-      75%, 95% { opacity: 1; }
-      100% { opacity: 0; }
-    }
-    @keyframes progressBar {
-      0% { width: 0; }
-      100% { width: 140px; }
-    }
-    @keyframes statusGreen {
-      0%, 100% { fill: #00ff88; }
-      50% { fill: #00cc66; }
-    }
-    .scan { animation: scanLine 4s linear infinite; }
-    .pulse1 { animation: pulse 2.5s ease-in-out infinite; }
-    .pulse2 { animation: pulse2 3s ease-in-out infinite 0.5s; }
-    .pulse3 { animation: pulse3 3.5s ease-in-out infinite 1s; }
-    .radar-sweep { animation: radarSweep 4s linear infinite; transform-origin: 150px 210px; }
-    .blink { animation: blink 1s step-end infinite; }
-    .shield-pulse { animation: shieldPulse 3s ease-in-out infinite; }
-    .hex-pulse { animation: hexPulse 5s ease-in-out infinite; }
-    .dot-blink { animation: dotBlink 3s linear infinite; }
-    .status-dot { animation: statusGreen 2s ease-in-out infinite; }
-    .data-line { stroke-dasharray: 100; animation: dataFlow 3s linear infinite; }
-    .fade1 { animation: slideIn 0.8s ease-out forwards; animation-delay: 0.3s; opacity: 0; }
-    .fade2 { animation: slideIn 0.8s ease-out forwards; animation-delay: 0.6s; opacity: 0; }
-    .fade3 { animation: slideIn 0.8s ease-out forwards; animation-delay: 0.9s; opacity: 0; }
-    .fade4 { animation: slideIn 0.8s ease-out forwards; animation-delay: 1.2s; opacity: 0; }
-    .fade5 { animation: slideIn 0.8s ease-out forwards; animation-delay: 1.5s; opacity: 0; }
-    .fade6 { animation: slideIn 0.8s ease-out forwards; animation-delay: 1.8s; opacity: 0; }
-    .fade7 { animation: slideIn 0.8s ease-out forwards; animation-delay: 2.1s; opacity: 0; }
-    .fade8 { animation: slideIn 0.8s ease-out forwards; animation-delay: 2.4s; opacity: 0; }
-    .mono { font-family: 'Courier New', 'Consolas', monospace; }
-    .sans { font-family: 'Segoe UI', 'Helvetica', Arial, sans-serif; }
-  </style>
+  <!-- Background -->
+  <rect width="900" height="420" fill="url(#bg)" rx="12"/>
 
-  <g clip-path="url(#mainClip)">
-    <!-- Background -->
-    <rect width="900" height="420" fill="url(#bgGrad)" rx="12"/>
-
-    <!-- Grid pattern -->
-    <g opacity="0.04">
-      <line x1="0" y1="0" x2="0" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="60" y1="0" x2="60" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="120" y1="0" x2="120" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="180" y1="0" x2="180" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="240" y1="0" x2="240" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="300" y1="0" x2="300" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="360" y1="0" x2="360" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="420" y1="0" x2="420" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="480" y1="0" x2="480" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="540" y1="0" x2="540" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="600" y1="0" x2="600" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="660" y1="0" x2="660" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="720" y1="0" x2="720" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="780" y1="0" x2="780" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="840" y1="0" x2="840" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="900" y1="0" x2="900" y2="420" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="0" y1="60" x2="900" y2="60" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="0" y1="120" x2="900" y2="120" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="0" y1="180" x2="900" y2="180" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="0" y1="240" x2="900" y2="240" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="0" y1="300" x2="900" y2="300" stroke="#00d9ff" stroke-width="0.5"/>
-      <line x1="0" y1="360" x2="900" y2="360" stroke="#00d9ff" stroke-width="0.5"/>
-    </g>
-
-    <!-- Hex pattern background -->
-    <g class="hex-pulse">
-      <polygon points="45,30 55,25 65,30 65,40 55,45 45,40" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.3"/>
-      <polygon points="745,60 755,55 765,60 765,70 755,75 745,70" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.3"/>
-      <polygon points="820,340 830,335 840,340 840,350 830,355 820,350" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.3"/>
-      <polygon points="680,380 690,375 700,380 700,390 690,395 680,390" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.3"/>
-      <polygon points="30,350 40,345 50,350 50,360 40,365 30,360" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.2"/>
-      <polygon points="850,120 860,115 870,120 870,130 860,135 850,130" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.2"/>
-    </g>
-
-    <!-- Scanning line -->
-    <rect class="scan" x="0" y="0" width="900" height="50" fill="url(#scanGrad)"/>
-
-    <!-- ═══════════ LEFT SIDE: RADAR ═══════════ -->
-    <g>
-      <!-- Radar circles -->
-      <circle cx="150" cy="210" class="pulse3" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.08"/>
-      <circle cx="150" cy="210" class="pulse2" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.15"/>
-      <circle cx="150" cy="210" class="pulse1" fill="none" stroke="#00d9ff" stroke-width="0.8" opacity="0.3"/>
-      <circle cx="150" cy="210" r="35" fill="none" stroke="#00d9ff" stroke-width="1" opacity="0.5"/>
-      <circle cx="150" cy="210" r="3" fill="#00d9ff" opacity="0.9"/>
-
-      <!-- Radar crosshairs -->
-      <line x1="150" y1="145" x2="150" y2="275" stroke="#00d9ff" stroke-width="0.3" opacity="0.3"/>
-      <line x1="85" y1="210" x2="215" y2="210" stroke="#00d9ff" stroke-width="0.3" opacity="0.3"/>
-
-      <!-- Radar sweep line -->
-      <line class="radar-sweep" x1="150" y1="210" x2="150" y2="100" stroke="#00d9ff" stroke-width="1.5" opacity="0.6" filter="url(#glow)"/>
-
-      <!-- Radar blips -->
-      <circle cx="170" cy="185" r="2.5" fill="#00ff88" opacity="0.8" class="dot-blink"/>
-      <circle cx="125" cy="230" r="2" fill="#ffd700" opacity="0.7" class="dot-blink" style="animation-delay: 1s"/>
-      <circle cx="175" cy="240" r="2" fill="#00ff88" opacity="0.6" class="dot-blink" style="animation-delay: 2s"/>
-      <circle cx="130" cy="190" r="1.5" fill="#ff6b6b" opacity="0.7" class="dot-blink" style="animation-delay: 0.5s"/>
-
-      <!-- Radar label -->
-      <text x="150" y="300" text-anchor="middle" class="mono" fill="#00d9ff" font-size="9" opacity="0.6">THREAT RADAR</text>
-      <text x="150" y="315" text-anchor="middle" class="mono" fill="#00ff88" font-size="8" opacity="0.5">SCANNING...</text>
-    </g>
-
-    <!-- ═══════════ CENTER: SHIELD + TITLE ═══════════ -->
-    <g>
-      <!-- Top bar -->
-      <rect x="260" y="22" width="380" height="1" fill="url(#cyanGlow)" opacity="0.4"/>
-
-      <!-- System Title -->
-      <text x="450" y="50" text-anchor="middle" class="mono" fill="#00d9ff" font-size="11" font-weight="bold" letter-spacing="4" filter="url(#glow)">INTELLIGENCE ANALYST SYSTEM</text>
-
-      <!-- Status indicator -->
-      <circle cx="340" cy="46" r="3" class="status-dot"/>
-      <text x="348" y="49" class="mono" fill="#00ff88" font-size="8">ONLINE</text>
-
-      <!-- Shield icon -->
-      <g transform="translate(450, 130)" class="shield-pulse" filter="url(#glowStrong)">
-        <path d="M0,-45 L30,-30 L30,10 Q30,40 0,50 Q-30,40 -30,10 L-30,-30 Z" fill="none" stroke="#00d9ff" stroke-width="2" opacity="0.8"/>
-        <path d="M0,-35 L22,-23 L22,8 Q22,32 0,40 Q-22,32 -22,8 L-22,-23 Z" fill="#00d9ff" opacity="0.05"/>
-        <text x="0" y="-5" text-anchor="middle" class="sans" fill="#00d9ff" font-size="22" font-weight="700">AI</text>
-        <text x="0" y="15" text-anchor="middle" class="mono" fill="#c9d1d9" font-size="8" letter-spacing="2">ANALYST</text>
-      </g>
-
-      <!-- Subtitle -->
-      <text x="450" y="200" text-anchor="middle" class="sans" fill="#c9d1d9" font-size="13" font-weight="600">Polícia Civil · Inteligência Artificial · Segurança Pública</text>
-
-      <!-- Decorative lines below subtitle -->
-      <line x1="310" y1="215" x2="590" y2="215" stroke="#00d9ff" stroke-width="0.5" opacity="0.2"/>
-    </g>
-
-    <!-- ═══════════ RIGHT SIDE: TERMINAL OUTPUT ═══════════ -->
-    <g transform="translate(630, 75)">
-      <!-- Terminal window -->
-      <rect x="0" y="0" width="240" height="270" rx="6" fill="#0a0e17" stroke="#1a2332" stroke-width="1" opacity="0.9"/>
-      <rect x="0" y="0" width="240" height="22" rx="6" fill="#1a2332"/>
-      <rect x="0" y="14" width="240" height="8" fill="#1a2332"/>
-      <circle cx="14" cy="11" r="4" fill="#ff5f57"/>
-      <circle cx="28" cy="11" r="4" fill="#febc2e"/>
-      <circle cx="42" cy="11" r="4" fill="#28c840"/>
-      <text x="120" y="15" text-anchor="middle" class="mono" fill="#8b949e" font-size="8">analyst.sh</text>
-
-      <!-- Terminal content -->
-      <text x="10" y="45" class="mono fade1" fill="#00d9ff" font-size="9">$ ./analyst --scan</text>
-
-      <text x="10" y="65" class="mono fade2" fill="#8b949e" font-size="9">[INFO] Inicializando módulos...</text>
-
-      <text x="10" y="90" class="mono fade3" fill="#00ff88" font-size="9">✓ Módulo de Investigação</text>
-      <text x="10" y="107" class="mono fade4" fill="#00ff88" font-size="9">✓ Inteligência Financeira</text>
-      <text x="10" y="124" class="mono fade5" fill="#00ff88" font-size="9">✓ Geointeligência (Mapbox)</text>
-      <text x="10" y="141" class="mono fade6" fill="#00ff88" font-size="9">✓ Auditoria e Compliance</text>
-      <text x="10" y="158" class="mono fade7" fill="#ffd700" font-size="9">✓ Análise de Vínculos</text>
-      <text x="10" y="175" class="mono fade8" fill="#ffd700" font-size="9">✓ BACEN PIX/CCS</text>
-
-      <!-- Analysis progress -->
-      <text x="10" y="200" class="mono" fill="#8b949e" font-size="9" opacity="0.7">─────────────────────────────</text>
-
-      <text x="10" y="220" class="mono" fill="#c9d1d9" font-size="9">Sistemas ativos:</text>
-      <text x="155" y="220" class="mono" fill="#00ff88" font-size="10" font-weight="bold">7 / 7</text>
-
-      <text x="10" y="240" class="mono" fill="#c9d1d9" font-size="9">Threat Level:</text>
-      <rect x="105" y="232" width="40" height="10" rx="2" fill="#00ff88" opacity="0.8"/>
-      <rect x="148" y="232" width="40" height="10" rx="2" fill="#1a2332" opacity="0.5"/>
-      <text x="200" y="241" class="mono" fill="#00ff88" font-size="8">LOW</text>
-
-      <text x="10" y="258" class="mono blink" fill="#00d9ff" font-size="9">█ Monitorando...</text>
-    </g>
-
-    <!-- ═══════════ BOTTOM: STATS BAR ═══════════ -->
-    <g>
-      <rect x="0" y="368" width="900" height="52" fill="#0a0e17" opacity="0.7"/>
-      <line x1="0" y1="368" x2="900" y2="368" stroke="#00d9ff" stroke-width="0.5" opacity="0.2"/>
-
-      <!-- Stat items -->
-      <g transform="translate(60, 398)">
-        <text x="0" y="0" class="mono" fill="#8b949e" font-size="9">OPERAÇÕES</text>
-        <text x="0" y="16" class="mono" fill="#00d9ff" font-size="14" font-weight="bold" filter="url(#glow)">150+</text>
-      </g>
-
-      <line x1="170" y1="378" x2="170" y2="410" stroke="#1a2332" stroke-width="1"/>
-
-      <g transform="translate(210, 398)">
-        <text x="0" y="0" class="mono" fill="#8b949e" font-size="9">MÓDULOS</text>
-        <text x="0" y="16" class="mono" fill="#00ff88" font-size="14" font-weight="bold" filter="url(#glow)">7</text>
-      </g>
-
-      <line x1="300" y1="378" x2="300" y2="410" stroke="#1a2332" stroke-width="1"/>
-
-      <g transform="translate(340, 398)">
-        <text x="0" y="0" class="mono" fill="#8b949e" font-size="9">EDGE FUNCTIONS</text>
-        <text x="0" y="16" class="mono" fill="#ffd700" font-size="14" font-weight="bold" filter="url(#glow)">32+</text>
-      </g>
-
-      <line x1="480" y1="378" x2="480" y2="410" stroke="#1a2332" stroke-width="1"/>
-
-      <g transform="translate(520, 398)">
-        <text x="0" y="0" class="mono" fill="#8b949e" font-size="9">TABELAS RLS</text>
-        <text x="0" y="16" class="mono" fill="#00d9ff" font-size="14" font-weight="bold" filter="url(#glow)">42</text>
-      </g>
-
-      <line x1="630" y1="378" x2="630" y2="410" stroke="#1a2332" stroke-width="1"/>
-
-      <g transform="translate(670, 398)">
-        <text x="0" y="0" class="mono" fill="#8b949e" font-size="9">UPTIME</text>
-        <text x="0" y="16" class="mono" fill="#00ff88" font-size="14" font-weight="bold" filter="url(#glow)">99.9%</text>
-      </g>
-
-      <line x1="780" y1="378" x2="780" y2="410" stroke="#1a2332" stroke-width="1"/>
-
-      <g transform="translate(810, 398)">
-        <text x="0" y="0" class="mono" fill="#8b949e" font-size="9">STATUS</text>
-        <circle cx="8" cy="14" r="4" class="status-dot"/>
-        <text x="18" y="17" class="mono" fill="#00ff88" font-size="10">ATIVO</text>
-      </g>
-    </g>
-
-    <!-- Corner decorations -->
-    <polyline points="15,2 2,2 2,15" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity="0.4"/>
-    <polyline points="885,2 898,2 898,15" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity="0.4"/>
-    <polyline points="2,405 2,418 15,418" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity="0.4"/>
-    <polyline points="898,405 898,418 885,418" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity="0.4"/>
-
-    <!-- Border glow -->
-    <rect x="1" y="1" width="898" height="418" rx="12" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.15"/>
+  <!-- Grid -->
+  <g opacity="0.04" stroke="#00d9ff" stroke-width="0.5">
+    <line x1="60" y1="0" x2="60" y2="420"/><line x1="120" y1="0" x2="120" y2="420"/>
+    <line x1="180" y1="0" x2="180" y2="420"/><line x1="240" y1="0" x2="240" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="420"/><line x1="360" y1="0" x2="360" y2="420"/>
+    <line x1="420" y1="0" x2="420" y2="420"/><line x1="480" y1="0" x2="480" y2="420"/>
+    <line x1="540" y1="0" x2="540" y2="420"/><line x1="600" y1="0" x2="600" y2="420"/>
+    <line x1="660" y1="0" x2="660" y2="420"/><line x1="720" y1="0" x2="720" y2="420"/>
+    <line x1="780" y1="0" x2="780" y2="420"/><line x1="840" y1="0" x2="840" y2="420"/>
+    <line x1="0" y1="60" x2="900" y2="60"/><line x1="0" y1="120" x2="900" y2="120"/>
+    <line x1="0" y1="180" x2="900" y2="180"/><line x1="0" y1="240" x2="900" y2="240"/>
+    <line x1="0" y1="300" x2="900" y2="300"/><line x1="0" y1="360" x2="900" y2="360"/>
   </g>
+
+  <!-- Hex decorations -->
+  <g opacity="0.06" fill="none" stroke="#00d9ff" stroke-width="0.5">
+    <polygon points="45,30 55,25 65,30 65,40 55,45 45,40"/>
+    <polygon points="745,60 755,55 765,60 765,70 755,75 745,70"/>
+    <polygon points="820,340 830,335 840,340 840,350 830,355 820,350"/>
+    <polygon points="680,380 690,375 700,380 700,390 690,395 680,390"/>
+    <polygon points="30,350 40,345 50,350 50,360 40,365 30,360"/>
+    <polygon points="850,120 860,115 870,120 870,130 860,135 850,130"/>
+  </g>
+
+  <!-- Scan line -->
+  <rect x="0" y="-50" width="900" height="50" fill="url(#scanG)">
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 520;0 0" dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ══════ LEFT: RADAR ══════ -->
+  <!-- Radar rings -->
+  <circle cx="150" cy="210" r="105" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.08">
+    <animate attributeName="r" values="100;112;100" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.08;0.25;0.08" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="150" cy="210" r="80" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.12">
+    <animate attributeName="r" values="76;88;76" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.12;0.4;0.12" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="150" cy="210" r="55" fill="none" stroke="#00d9ff" stroke-width="0.8" opacity="0.25">
+    <animate attributeName="r" values="52;62;52" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.25;0.7;0.25" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="150" cy="210" r="35" fill="none" stroke="#00d9ff" stroke-width="1" opacity="0.5"/>
+  <circle cx="150" cy="210" r="3" fill="#00d9ff" opacity="0.9"/>
+
+  <!-- Radar crosshairs -->
+  <line x1="150" y1="145" x2="150" y2="275" stroke="#00d9ff" stroke-width="0.3" opacity="0.3"/>
+  <line x1="85" y1="210" x2="215" y2="210" stroke="#00d9ff" stroke-width="0.3" opacity="0.3"/>
+
+  <!-- Radar sweep -->
+  <line x1="150" y1="210" x2="150" y2="100" stroke="#00d9ff" stroke-width="1.5" opacity="0.6">
+    <animateTransform attributeName="transform" type="rotate" from="0 150 210" to="360 150 210" dur="4s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Radar blips -->
+  <circle cx="170" cy="185" r="2.5" fill="#00ff88">
+    <animate attributeName="opacity" values="0;1;1;0" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="125" cy="230" r="2" fill="#ffd700">
+    <animate attributeName="opacity" values="0;0;1;1;0" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="175" cy="240" r="2" fill="#00ff88">
+    <animate attributeName="opacity" values="1;0;0;1" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="130" cy="190" r="1.5" fill="#ff6b6b">
+    <animate attributeName="opacity" values="0;1;0;1;0" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Radar labels -->
+  <text x="150" y="300" text-anchor="middle" font-family="Consolas,monospace" fill="#00d9ff" font-size="9" opacity="0.6">THREAT RADAR</text>
+  <text x="150" y="315" text-anchor="middle" font-family="Consolas,monospace" fill="#00ff88" font-size="8" opacity="0.5">SCANNING...</text>
+
+  <!-- ══════ CENTER: SHIELD + TITLE ══════ -->
+  <!-- Top line -->
+  <rect x="260" y="22" width="380" height="1" fill="url(#cyan)" opacity="0.4"/>
+
+  <!-- Title -->
+  <text x="450" y="50" text-anchor="middle" font-family="Consolas,monospace" fill="#00d9ff" font-size="11" font-weight="bold" letter-spacing="4">INTELLIGENCE  ANALYST  SYSTEM</text>
+
+  <!-- Status -->
+  <circle cx="340" cy="46" r="3" fill="#00ff88">
+    <animate attributeName="fill" values="#00ff88;#00cc66;#00ff88" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="348" y="49" font-family="Consolas,monospace" fill="#00ff88" font-size="8">ONLINE</text>
+
+  <!-- Shield -->
+  <g>
+    <path d="M450,85 L480,98 L480,138 Q480,168 450,178 Q420,168 420,138 L420,98 Z" fill="none" stroke="#00d9ff" stroke-width="2" opacity="0.8">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M450,95 L472,105 L472,135 Q472,160 450,168 Q428,160 428,135 L428,105 Z" fill="#00d9ff" opacity="0.05"/>
+    <text x="450" y="132" text-anchor="middle" font-family="Segoe UI,Helvetica,sans-serif" fill="#00d9ff" font-size="22" font-weight="700">AI</text>
+    <text x="450" y="152" text-anchor="middle" font-family="Consolas,monospace" fill="#c9d1d9" font-size="8" letter-spacing="2">ANALYST</text>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="450" y="200" text-anchor="middle" font-family="Segoe UI,Helvetica,sans-serif" fill="#c9d1d9" font-size="13" font-weight="600">Policia Civil  ·  Inteligencia Artificial  ·  Seguranca Publica</text>
+  <line x1="310" y1="215" x2="590" y2="215" stroke="#00d9ff" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- ══════ RIGHT: TERMINAL ══════ -->
+  <!-- Window -->
+  <rect x="630" y="75" width="240" height="270" rx="6" fill="#0a0e17" stroke="#1a2332" stroke-width="1" opacity="0.9"/>
+  <rect x="630" y="75" width="240" height="22" rx="6" fill="#1a2332"/>
+  <rect x="630" y="89" width="240" height="8" fill="#1a2332"/>
+  <circle cx="644" cy="86" r="4" fill="#ff5f57"/>
+  <circle cx="658" cy="86" r="4" fill="#febc2e"/>
+  <circle cx="672" cy="86" r="4" fill="#28c840"/>
+  <text x="750" y="90" text-anchor="middle" font-family="Consolas,monospace" fill="#8b949e" font-size="8">analyst.sh</text>
+
+  <!-- Terminal lines with staggered fade-in -->
+  <text x="640" y="120" font-family="Consolas,monospace" fill="#00d9ff" font-size="9" opacity="0">
+    $ ./analyst --scan
+    <animate attributeName="opacity" values="0;0;1;1" dur="4s" fill="freeze"/>
+  </text>
+  <text x="640" y="140" font-family="Consolas,monospace" fill="#8b949e" font-size="9" opacity="0">
+    [INFO] Inicializando modulos...
+    <animate attributeName="opacity" values="0;0;0;1;1" dur="5s" fill="freeze"/>
+  </text>
+
+  <!-- Module checkmarks -->
+  <g font-family="Consolas,monospace" font-size="9">
+    <text x="640" y="163" fill="#00ff88" opacity="0">✓ Modulo de Investigacao
+      <animate attributeName="opacity" values="0;0;0;0;1" dur="4s" fill="freeze"/>
+    </text>
+    <text x="640" y="180" fill="#00ff88" opacity="0">✓ Inteligencia Financeira
+      <animate attributeName="opacity" values="0;0;0;0;0;1" dur="5s" fill="freeze"/>
+    </text>
+    <text x="640" y="197" fill="#00ff88" opacity="0">✓ Geointeligencia (Mapbox)
+      <animate attributeName="opacity" values="0;0;0;0;0;0;1" dur="6s" fill="freeze"/>
+    </text>
+    <text x="640" y="214" fill="#00ff88" opacity="0">✓ Auditoria e Compliance
+      <animate attributeName="opacity" values="0;0;0;0;0;0;0;1" dur="7s" fill="freeze"/>
+    </text>
+    <text x="640" y="231" fill="#ffd700" opacity="0">✓ Analise de Vinculos
+      <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1" dur="8s" fill="freeze"/>
+    </text>
+    <text x="640" y="248" fill="#ffd700" opacity="0">✓ BACEN PIX/CCS
+      <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;1" dur="9s" fill="freeze"/>
+    </text>
+  </g>
+
+  <!-- Separator -->
+  <text x="640" y="270" font-family="Consolas,monospace" fill="#8b949e" font-size="9" opacity="0.5">─────────────────────────────</text>
+
+  <!-- Stats -->
+  <text x="640" y="290" font-family="Consolas,monospace" fill="#c9d1d9" font-size="9">Sistemas ativos:</text>
+  <text x="785" y="290" font-family="Consolas,monospace" fill="#00ff88" font-size="10" font-weight="bold">7 / 7</text>
+
+  <text x="640" y="310" font-family="Consolas,monospace" fill="#c9d1d9" font-size="9">Threat Level:</text>
+  <rect x="735" y="302" width="40" height="10" rx="2" fill="#00ff88" opacity="0.8"/>
+  <rect x="778" y="302" width="40" height="10" rx="2" fill="#1a2332" opacity="0.5"/>
+  <text x="830" y="311" font-family="Consolas,monospace" fill="#00ff88" font-size="8">LOW</text>
+
+  <!-- Blinking cursor -->
+  <text x="640" y="333" font-family="Consolas,monospace" fill="#00d9ff" font-size="9">█ Monitorando...</text>
+  <rect x="640" y="324" width="7" height="12" fill="#00d9ff">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- ══════ BOTTOM: STATS BAR ══════ -->
+  <rect x="0" y="368" width="900" height="52" fill="#0a0e17" opacity="0.7"/>
+  <line x1="0" y1="368" x2="900" y2="368" stroke="#00d9ff" stroke-width="0.5" opacity="0.2"/>
+
+  <g font-family="Consolas,monospace">
+    <text x="60" y="390" fill="#8b949e" font-size="9">OPERACOES</text>
+    <text x="60" y="408" fill="#00d9ff" font-size="14" font-weight="bold">150+</text>
+
+    <line x1="170" y1="378" x2="170" y2="410" stroke="#1a2332" stroke-width="1"/>
+
+    <text x="210" y="390" fill="#8b949e" font-size="9">MODULOS</text>
+    <text x="210" y="408" fill="#00ff88" font-size="14" font-weight="bold">7</text>
+
+    <line x1="300" y1="378" x2="300" y2="410" stroke="#1a2332" stroke-width="1"/>
+
+    <text x="340" y="390" fill="#8b949e" font-size="9">EDGE FUNCTIONS</text>
+    <text x="340" y="408" fill="#ffd700" font-size="14" font-weight="bold">32+</text>
+
+    <line x1="480" y1="378" x2="480" y2="410" stroke="#1a2332" stroke-width="1"/>
+
+    <text x="520" y="390" fill="#8b949e" font-size="9">TABELAS RLS</text>
+    <text x="520" y="408" fill="#00d9ff" font-size="14" font-weight="bold">42</text>
+
+    <line x1="630" y1="378" x2="630" y2="410" stroke="#1a2332" stroke-width="1"/>
+
+    <text x="670" y="390" fill="#8b949e" font-size="9">UPTIME</text>
+    <text x="670" y="408" fill="#00ff88" font-size="14" font-weight="bold">99.9%</text>
+
+    <line x1="780" y1="378" x2="780" y2="410" stroke="#1a2332" stroke-width="1"/>
+
+    <text x="810" y="390" fill="#8b949e" font-size="9">STATUS</text>
+    <circle cx="818" cy="406" r="4" fill="#00ff88">
+      <animate attributeName="fill" values="#00ff88;#00cc66;#00ff88" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="828" y="409" fill="#00ff88" font-size="10">ATIVO</text>
+  </g>
+
+  <!-- Corner brackets -->
+  <polyline points="15,2 2,2 2,15" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity="0.4"/>
+  <polyline points="885,2 898,2 898,15" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity="0.4"/>
+  <polyline points="2,405 2,418 15,418" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity="0.4"/>
+  <polyline points="898,405 898,418 885,418" fill="none" stroke="#00d9ff" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Outer border -->
+  <rect x="1" y="1" width="898" height="418" rx="12" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.15"/>
 </svg>
